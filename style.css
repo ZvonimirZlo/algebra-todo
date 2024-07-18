@@ -50,11 +50,22 @@
     font-weight: bold;
 }
 
+.check:hover{
+    background-color: var(--secondary-color);
+    transition: .2s ease-in-out;
+    color: black;
+}
+
 .fav, .del {
     border: none;
     background-color: var(--secondary-color);
     text-decoration: underline;
+}
 
+.del:hover, .fav:hover{
+    background-color: var(--primary-color);
+    transition: .2s ease-in-out;
+    color: black;
 }
 
 .grade {
