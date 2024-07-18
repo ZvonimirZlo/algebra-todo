@@ -6,7 +6,7 @@
 
 .form{
  border: 1px solid black;
- width: 700px;
+ width: 750px;
  height: 80px;
  background-color: var(--primary-color);
  display: flex;
@@ -36,7 +36,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 700px;
+    width: 750px;
     padding: 20px;
     margin: 20px auto;
     background-color: var(--secondary-color);

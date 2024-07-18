@@ -54,11 +54,11 @@ const addRes = () => {
 
 
     fav.addEventListener('click', () => {
-        favtxt.innerText = 'Favorite!';
+        res.style.color = 'red';
     })
 
     fav.addEventListener('dblclick', () => {
-        favtxt.innerHTML = '';
+        res.style.color = 'black';
     })
 
 
