@@ -1,0 +1,79 @@
+:root{
+    --bg:gray;
+    --input: lightgray;
+}
+
+
+.form{
+ border: 1px solid black;
+ width: 700px;
+ height: 80px;
+ background-color: var(--bg);
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ margin: 20px auto;
+}
+
+.form input {
+    background-color: var(--input);
+    margin: 10px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    float: left;
+    margin: 20px;
+}
+
+
+.res {
+    border: 1px solid black;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 700px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: var(--input);
+}
+
+.check {
+    color: whitesmoke;
+    background-color: black;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+}
+
+.fav, .del {
+    border: none;
+    background-color: var(--input);
+    text-decoration: underline;
+
+}
+
+.grade {
+    width: 350px;
+}
+
+.num {
+    width: 100px;
+}
+
+.grade, .num {
+    height: 25px;
+}
+
+.output {
+    font-weight: bold;
+}
+
+input, label {
+    display:block;
+}
+
