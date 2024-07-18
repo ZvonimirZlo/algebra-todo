@@ -3,7 +3,7 @@ const check = document.getElementById('check');
 const grade = document.getElementById('grade');
 const num = document.getElementById('number');
 const res = document.getElementById('resultCont');
-
+const form = document.getElementById('form');
 
 
 const time = new Date();
@@ -21,7 +21,6 @@ let datum = `${date}.${month}.${year} ${hour}:${minute}:${secs}`;
 
 const addRes = () => {
 
-    const form = document.getElementById('form');
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -37,7 +36,7 @@ const addRes = () => {
  <div class='out'>
     <span class="output">${grade.value}-${num.value}</span>
      <p id="day">${datum}</p>
-     <p id='favtxt'></p>
+     <span id='favtxt'></span>
  </div>
  <div>
     <button class="fav" id='fav'>Dodaj u favorite</button>
@@ -55,24 +54,20 @@ const addRes = () => {
 
 
     fav.addEventListener('click', () => {
-       favtxt.innerText = 'Favorite!';
-      })
+        favtxt.innerText = 'Favorite!';
+    })
 
     fav.addEventListener('dblclick', () => {
         favtxt.innerHTML = '';
-     })
+    })
 
-   
+
 
     del.addEventListener('click', () => {
         res.removeChild(divElem);
 
     })
 }
-
-
-
-
 
 check.onclick = addRes;
 
