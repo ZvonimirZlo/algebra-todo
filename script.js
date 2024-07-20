@@ -30,7 +30,7 @@ const addTask = () => {
     <span id="favorite"></span>
 
     <div class="out-buttons-two">
-        <button class="fav">Dodaj u favorite</button>
+        <button class="fav" type="button">Dodaj u favorite</button>
         <button class="del">Izbriši</button>
     </div>
     `
@@ -49,11 +49,13 @@ const addTask = () => {
     addFav.onclick = () => {
       fav.innerHTML = 'FAVORIT!';
       divTwo.style.backgroundColor = 'lime';
+      addFav.innerText = 'Izbaci iz favorita';
     }
 
     addFav.addEventListener('dblclick',() => {
         fav.innerHTML = '';
         divTwo.style.backgroundColor = 'lightGray'; 
+        addFav.innerText = 'Dodaj u favorite';
     })
 
     inputOne.value = '';
