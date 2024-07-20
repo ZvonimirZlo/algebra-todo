@@ -19,7 +19,7 @@ const timeFormat = `${date}.${month}.${year} ${hours}:${minutes}:${secs}`
 //Add task function, creates task elements and renders it on the screen
 const addTask = () => {
     
-    //Prevents creating empty tasks if some of the inputs is empty
+    //Prevents creating empty tasks if input one or input two is empty
     if (inputOne.value === '' || inputTwo.value === '') {
         return;
     }
