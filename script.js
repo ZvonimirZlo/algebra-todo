@@ -47,16 +47,18 @@ const addTask = () => {
     const divTwo = divElem.querySelector('.div-two');
 
     addFav.onclick = () => {
-      fav.innerHTML = 'FAVORIT!';
+      fav.innerHTML === 'FAVORIT!' ? fav.innerHTML = '' : fav.innerHTML = 'FAVORIT!';
       divTwo.style.backgroundColor = 'lime';
-      addFav.innerText = 'Izbaci iz favorita!';
+      addFav.innerHTML === 'Izbaci iz favorita!' ? addFav.innerHTML = 'Dodaj u favorite!' : addFav.innerHTML = 'Izbaci iz favorita!';
     }
 
-    addFav.addEventListener('dblclick',() => {
-        fav.innerHTML = '';
-        divTwo.style.backgroundColor = 'lightGray'; 
-        addFav.innerText = 'Dodaj u favorite!';
-    })
+    // addFav.ondblclick = () => {
+    //     fav.innerHTML = '';
+    //     divTwo.style.backgroundColor = 'lightgray';
+    //     addFav.innerText = 'Dodaj u favorite!';
+    //   }
+
+    
 
     inputOne.value = '';
     inputTwo.value = '';
