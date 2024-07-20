@@ -37,7 +37,7 @@ const addTask = () => {
     <span id="favorite"></span>
 
     <div class="out-buttons-two">
-        <button class="fav" type="button">Add to favorite!</button>
+        <button class="add-favorite" type="button">Add to favorite!</button>
         <button class="del">Delete</button>
     </div>
     `
@@ -49,14 +49,14 @@ const addTask = () => {
         output.removeChild(divElem);
     }
 
-    const addFav = divElem.querySelector('.fav');
-    const fav = divElem.querySelector('#favorite');
+    const addFav = divElem.querySelector('.add-favorite');
+    const favorite = divElem.querySelector('#favorite');
     const divTwo = divElem.querySelector('.div-two');
 
 
     //Add to favorite event handler, toggles style and button text and adds 'FAVORITE!' on task element
     addFav.onclick = () => {
-        fav.innerHTML === 'FAVORITE!' ? fav.innerHTML = '' : fav.innerHTML = 'FAVORITE!';
+        favorite.innerHTML === 'FAVORITE!' ? favorite.innerHTML = '' : favorite.innerHTML = 'FAVORITE!';
         divTwo.style.backgroundColor === 'lime' ? divTwo.style.backgroundColor = 'lightgray' : divTwo.style.backgroundColor = 'lime';
         addFav.innerHTML === 'Remove from favorite!' ? addFav.innerHTML = 'Add to favorite!' : addFav.innerHTML = 'Remove from favorite!';
     }
