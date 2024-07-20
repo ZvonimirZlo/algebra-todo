@@ -1,1 +1,1 @@
-Practice project. Something similar was the part of the final Front-End exam on Algebra University.
+Practice project. Something similar was part of the final Front-End exam on Algebra University.
