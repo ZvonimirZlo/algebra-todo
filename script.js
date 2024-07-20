@@ -4,15 +4,15 @@ const inputTwo = document.getElementById('number');
 const output = document.getElementById('output');
 
 
-let time = new Date();
-let year = time.getFullYear();
-let month = time.getMonth() + 1;
-let date = time.getDate();
-let hour = time.getHours();
-let minutes = time.getMinutes();
-let secs = time.getSeconds();
+const time = new Date();
+const year = time.getFullYear();
+const month = time.getMonth() + 1;
+const date = time.getDate();
+const hours = time.getHours();
+const minutes = time.getMinutes();
+const secs = time.getSeconds();
 
-let vrijeme = `${date}.${month}.${year} ${hour}:${minutes}:${secs}`
+const vrijeme = `${date}.${month}.${year} ${hours}:${minutes}:${secs}`
 
 const addTask = () => {
     if(inputOne.value === '' || inputTwo.value === ''){
@@ -49,13 +49,13 @@ const addTask = () => {
     addFav.onclick = () => {
       fav.innerHTML = 'FAVORIT!';
       divTwo.style.backgroundColor = 'lime';
-      addFav.innerText = 'Izbaci iz favorita';
+      addFav.innerText = 'Izbaci iz favorita!';
     }
 
     addFav.addEventListener('dblclick',() => {
         fav.innerHTML = '';
         divTwo.style.backgroundColor = 'lightGray'; 
-        addFav.innerText = 'Dodaj u favorite';
+        addFav.innerText = 'Dodaj u favorite!';
     })
 
     inputOne.value = '';
@@ -67,6 +67,8 @@ form.addEventListener('submit' , (e) => {
     e.preventDefault();
     addTask();
 })
+
+
 
 
 
