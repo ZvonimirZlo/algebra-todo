@@ -15,16 +15,9 @@ const hour = time.getHours();
 const minute = time.getMinutes();
 const secs = time.getSeconds();
 
-
 let datum = `${date}.${month}.${year} ${hour}:${minute}:${secs}`;
 
-
 const addRes = () => {
-
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-    })
 
     if (grade.value === "" || num.value === "") {
         return;
@@ -52,7 +45,6 @@ const addRes = () => {
     const fav = divElem.querySelector('#fav');
     const favtxt = divElem.querySelector('#favtxt')
 
-
     fav.addEventListener('click', () => {
         res.style.color = 'red';
     })
@@ -61,15 +53,16 @@ const addRes = () => {
         res.style.color = 'black';
     })
 
-
-
     del.addEventListener('click', () => {
         res.removeChild(divElem);
 
     })
 }
 
-check.onclick = addRes;
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    addRes();
+})
 
 
 
