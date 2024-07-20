@@ -54,7 +54,7 @@ const addTask = () => {
     const divTwo = divElem.querySelector('.div-two');
 
 
-    //Add to favorite event handler, toggles style and button text and adds 'FAVORITE!' on task element
+    //Add to favorite event handler, toggles style and button text and adds 'FAVORITE!' or removes it from task element
     addFav.onclick = () => {
         favorite.innerHTML === 'FAVORITE!' ? favorite.innerHTML = '' : favorite.innerHTML = 'FAVORITE!';
         divTwo.style.backgroundColor === 'lime' ? divTwo.style.backgroundColor = 'lightgray' : divTwo.style.backgroundColor = 'lime';
