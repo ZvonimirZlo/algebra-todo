@@ -1,68 +1,73 @@
-const day = document.getElementById('day')
-const check = document.getElementById('check');
-const grade = document.getElementById('grade');
-const num = document.getElementById('number');
-const res = document.getElementById('resultCont');
 const form = document.getElementById('form');
+const inputOne = document.getElementById('grade');
+const inputTwo = document.getElementById('number');
+const output = document.getElementById('output');
 
 
-const time = new Date();
+let time = new Date();
+let year = time.getFullYear();
+let month = time.getMonth() + 1;
+let date = time.getDate();
+let hour = time.getHours();
+let minutes = time.getMinutes();
+let secs = time.getSeconds();
 
-const year = time.getFullYear();
-const month = time.getMonth() + 1;
-const date = time.getDate();
-const hour = time.getHours();
-const minute = time.getMinutes();
-const secs = time.getSeconds();
+let vrijeme = `${date}.${month}.${year} ${hour}:${minutes}:${secs}`
 
-let datum = `${date}.${month}.${year} ${hour}:${minute}:${secs}`;
-
-const addRes = () => {
-
-    if (grade.value === "" || num.value === "") {
+const addTask = () => {
+    if(inputOne.value === '' || inputTwo.value === ''){
         return;
     }
 
     const divElem = document.createElement('div');
+
     divElem.innerHTML = `
-    <div class='res'>           
- <div class='out'>
-    <span class="output">${grade.value}-${num.value}</span>
-     <p id="day">${datum}</p>
-     <span id='favtxt'></span>
- </div>
- <div>
-    <button class="fav" id='fav'>Dodaj u favorite</button>
-    <button class="del" id="del">Izbrisi</button>
-  </div>
-  </div>`;
+    <div class="div-two">
+    <div>
+        <span id="gradeSpan">${inputOne.value}-${inputTwo.value}</span>
+        <p id='vrijeme'>${vrijeme}</p>
+    </div>
+    <span id="favorite"></span>
 
-    res.appendChild(divElem);
-    grade.value = '';
-    num.value = '';
+    <div class="out-buttons-two">
+        <button class="fav">Dodaj u favorite</button>
+        <button class="del">Izbriši</button>
+    </div>
+    `
 
-    const del = divElem.querySelector('#del');
-    const fav = divElem.querySelector('#fav');
-    const favtxt = divElem.querySelector('#favtxt')
+    output.appendChild(divElem);
 
-    fav.addEventListener('click', () => {
-        res.style.color = 'red';
+    const del = divElem.querySelector('.del');
+    del.onclick = () => {
+        output.removeChild(divElem);
+    }
+
+    const addFav = divElem.querySelector('.fav');
+    const fav = divElem.querySelector('#favorite');
+    const divTwo = divElem.querySelector('.div-two');
+
+    addFav.onclick = () => {
+      fav.innerHTML = 'FAVORIT!';
+      divTwo.style.backgroundColor = 'lime';
+    }
+
+    addFav.addEventListener('dblclick',() => {
+        fav.innerHTML = '';
+        divTwo.style.backgroundColor = 'lightGray'; 
     })
 
-    fav.addEventListener('dblclick', () => {
-        res.style.color = 'black';
-    })
+    inputOne.value = '';
+    inputTwo.value = '';
 
-    del.addEventListener('click', () => {
-        res.removeChild(divElem);
-
-    })
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit' , (e) => {
     e.preventDefault();
-    addRes();
+    addTask();
 })
+
+
+
 
 
 
