@@ -1,9 +1,10 @@
+//Variables
 const form = document.getElementById('form');
 const inputOne = document.getElementById('grade');
 const inputTwo = document.getElementById('number');
 const output = document.getElementById('output');
 
-
+//Date object and instances needed to create correct time format
 const time = new Date();
 const year = time.getFullYear();
 const month = time.getMonth() + 1;
@@ -12,26 +13,32 @@ const hours = time.getHours();
 const minutes = time.getMinutes();
 const secs = time.getSeconds();
 
-const vrijeme = `${date}.${month}.${year} ${hours}:${minutes}:${secs}`
+//Time format 
+const timeFormat = `${date}.${month}.${year} ${hours}:${minutes}:${secs}`
 
+//Add task function, creates task elements and renders it on the screen
 const addTask = () => {
-    if(inputOne.value === '' || inputTwo.value === ''){
+    
+    //Prevents creating empty tasks if some of the inputs is empty
+    if (inputOne.value === '' || inputTwo.value === '') {
         return;
     }
-
+ 
+    //Creates new task element
     const divElem = document.createElement('div');
-
+    
+    //Task element with inputs values and time when the element was created
     divElem.innerHTML = `
     <div class="div-two">
     <div>
         <span id="gradeSpan">${inputOne.value}-${inputTwo.value}</span>
-        <p id='vrijeme'>${vrijeme}</p>
+        <p id='timeFormat'>${timeFormat}</p>
     </div>
     <span id="favorite"></span>
 
     <div class="out-buttons-two">
-        <button class="fav" type="button">Dodaj u favorite</button>
-        <button class="del">Izbriši</button>
+        <button class="fav" type="button">Add to favorite!</button>
+        <button class="del">Delete</button>
     </div>
     `
 
@@ -46,26 +53,21 @@ const addTask = () => {
     const fav = divElem.querySelector('#favorite');
     const divTwo = divElem.querySelector('.div-two');
 
+
+    //Add to favorite button event handler, when clicked changes style and button text and adds 'FAVORITE!' on task element
     addFav.onclick = () => {
-      fav.innerHTML === 'FAVORITE!' ? fav.innerHTML = '' : fav.innerHTML = 'FAVORITE!';
-      divTwo.style.backgroundColor === 'lime' ? divTwo.style.backgroundColor = 'lightgray' : divTwo.style.backgroundColor = 'lime';
-      addFav.innerHTML === 'Izbaci iz favorita!' ? addFav.innerHTML = 'Dodaj u favorite!' : addFav.innerHTML = 'Izbaci iz favorita!';
+        fav.innerHTML === 'FAVORITE!' ? fav.innerHTML = '' : fav.innerHTML = 'FAVORITE!';
+        divTwo.style.backgroundColor === 'lime' ? divTwo.style.backgroundColor = 'lightgray' : divTwo.style.backgroundColor = 'lime';
+        addFav.innerHTML === 'Remove from favorites!' ? addFav.innerHTML = 'Add to favorite!' : addFav.innerHTML = 'Remove from favorite!';
     }
-
-    // addFav.ondblclick = () => {
-    //     fav.innerHTML = '';
-    //     divTwo.style.backgroundColor = 'lightgray';
-    //     addFav.innerText = 'Dodaj u favorite!';
-    //   }
-
     
-
+    //Resets inputs to empty when task is created, prevents of creating multiple same tasks 
     inputOne.value = '';
     inputTwo.value = '';
 
 }
 
-form.addEventListener('submit' , (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
     addTask();
 })
