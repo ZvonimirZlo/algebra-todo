@@ -58,7 +58,7 @@ const addTask = () => {
     addFav.onclick = () => {
         fav.innerHTML === 'FAVORITE!' ? fav.innerHTML = '' : fav.innerHTML = 'FAVORITE!';
         divTwo.style.backgroundColor === 'lime' ? divTwo.style.backgroundColor = 'lightgray' : divTwo.style.backgroundColor = 'lime';
-        addFav.innerHTML === 'Remove from favorites!' ? addFav.innerHTML = 'Add to favorite!' : addFav.innerHTML = 'Remove from favorites!';
+        addFav.innerHTML === 'Remove from favorite!' ? addFav.innerHTML = 'Add to favorite!' : addFav.innerHTML = 'Remove from favorite!';
     }
     
     //Reset inputs to empty when task is created, prevents of creating multiple same tasks 
