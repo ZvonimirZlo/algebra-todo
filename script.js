@@ -47,8 +47,8 @@ const addTask = () => {
     const divTwo = divElem.querySelector('.div-two');
 
     addFav.onclick = () => {
-      fav.innerHTML === 'FAVORIT!' ? fav.innerHTML = '' : fav.innerHTML = 'FAVORIT!';
-      divTwo.style.backgroundColor = 'lime';
+      fav.innerHTML === 'FAVORITE!' ? fav.innerHTML = '' : fav.innerHTML = 'FAVORITE!';
+      divTwo.style.backgroundColor === 'lime' ? divTwo.style.backgroundColor = 'lightgray' : divTwo.style.backgroundColor = 'lime';
       addFav.innerHTML === 'Izbaci iz favorita!' ? addFav.innerHTML = 'Dodaj u favorite!' : addFav.innerHTML = 'Izbaci iz favorita!';
     }
 
