@@ -44,7 +44,10 @@ const addTask = () => {
 
     output.appendChild(divElem);
 
+    //Delete button
     const del = divElem.querySelector('.del');
+    
+    //Delete task element 
     del.onclick = () => {
         output.removeChild(divElem);
     }
@@ -67,6 +70,7 @@ const addTask = () => {
 
 }
 
+//Form submit event listener
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     addTask();
