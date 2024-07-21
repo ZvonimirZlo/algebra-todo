@@ -13,6 +13,7 @@
  justify-content: space-between;
  padding: 20px;
  margin: 20px auto;
+ border-radius: 5px;
 }
 
 .form input {
@@ -38,6 +39,7 @@
     padding: 20px;
     margin: 20px auto;
     background-color: var(--secondary-color);
+    border-radius: 5px;
 }
 
 .check {
@@ -46,6 +48,7 @@
     width: 100px;
     height: 30px;
     font-weight: bold;
+    border-radius: 5px;
 }
 
 .check:hover{
