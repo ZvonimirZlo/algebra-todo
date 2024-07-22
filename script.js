@@ -64,7 +64,7 @@ const addTask = () => {
         addFav.innerHTML === 'Remove from favorite!' ? addFav.innerHTML = 'Add to favorite!' : addFav.innerHTML = 'Remove from favorite!';
     }
     
-    //Reset inputs to empty when task is created, prevents of creating multiple same tasks 
+    //Resets inputs when task is created, prevents of creating multiple same tasks 
     inputOne.value = '';
     inputTwo.value = '';
 
